@@ -1,0 +1,76 @@
+<script>
+// Restyle all accordion blocks
+document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.querySelectorAll('.t585')).forEach((element) =>
+        element.classList.add('restyled-accordion')
+    );
+});
+</script>
+<style>
+.restyled-accordion .t-col.t-prefix_2 {
+    padding-left: 0px;
+}
+.restyled-accordion .t-col:last-child .t585__border {
+    display: none;
+}
+
+.restyled-accordion .t585__header {
+    display: flex;
+    align-items: center;
+    border: unset !important;
+    padding: 12px 0;
+}
+.restyled-accordion .t585__header:hover .t585__icon {
+    opacity: 1;
+}
+
+.restyled-accordion .t585__title {
+    order: 1;
+}
+
+.restyled-accordion .t585__icon {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 28px;
+    border: 1px solid #df5b1c;
+    border-radius: 50%;
+    padding: 12px;
+    text-align: center;
+    transform: unset;
+    transition: 0.5s;
+}
+.restyled-accordion .t585__icon > div,
+.restyled-accordion .t585__icon-hover {
+    display: none;
+}
+.restyled-accordion .t585__icon::before,
+.restyled-accordion .t585__icon::after {
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 0.8em);
+    left: calc(50% - 0.35em);
+    width: 16px;
+    transition: 0.3s;
+}
+.restyled-accordion .t585__icon::before {
+    content: url('data:image/svg+xml; utf8, <svg aria-hidden="true" class="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%23df5b1c" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>');
+}
+.restyled-accordion .t585__icon::after {
+    content: url('data:image/svg+xml; utf8, <svg aria-hidden="true" class="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%23ffffff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>');
+    opacity: 0;
+}
+.restyled-accordion .t585__header.t585__opened .t585__icon {
+    background-color: #df5b1c;
+    transform: rotate(90deg);
+}
+.restyled-accordion .t585__header.t585__opened .t585__icon::before {
+    opacity: 0;
+}
+.restyled-accordion .t585__header.t585__opened .t585__icon::after {
+    opacity: 1;
+}
+
+.restyled-accordion .t585__text {
+    padding-left: 70px;
+}
+</style>
